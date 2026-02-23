@@ -2,7 +2,10 @@ package com.example.demo.controller;
 
 import com.example.demo.business.CargoService;
 import com.example.demo.infrastructure.entitiys.Cargo;
+import com.example.demo.infrastructure.entitiys.CargoDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,9 +30,9 @@ public class CargoController {
     }
 
     @PostMapping
-    public Cargo criar(@RequestBody Cargo cargo) {
-
-        return service.salvar(cargo);
+    public ResponseEntity<Cargo> salvar(@RequestBody CargoDTO dto) {
+        Cargo cargoSalvo = service.salvar(dto);
+        return ResponseEntity.status(HttpStatus.CREATED).body(cargoSalvo);
     }
 
     @PutMapping("/{id}")

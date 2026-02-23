@@ -1,5 +1,6 @@
 package com.example.demo.infrastructure.entitiys;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -22,8 +23,10 @@ public class Equipe {
     private Integer AnoNascimento;
     private String Nacionalidade;
 
-    @OneToMany(mappedBy = "equipe")
+    @OneToMany(mappedBy = "equipe", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Cargo> cargos;
+
 
     @OneToMany(mappedBy = "equipe")
     private List<FilmesEquipe> filmes;

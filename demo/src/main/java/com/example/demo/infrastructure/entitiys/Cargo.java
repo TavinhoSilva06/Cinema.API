@@ -1,5 +1,7 @@
 package com.example.demo.infrastructure.entitiys;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -19,7 +21,8 @@ public class Cargo {
     private String Cargo;
 
     @ManyToOne
-    @JoinColumn(name = "IDEquipe")
+    @JoinColumn(name = "idEquipe")
+    @JsonBackReference
     private Equipe equipe;
 }
 
