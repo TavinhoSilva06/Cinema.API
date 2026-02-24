@@ -21,7 +21,7 @@ public class Cargo {
     private String Cargo;
 
     @ManyToOne
-    @JoinColumn(name = "idEquipe")
+    @JoinColumn(name = "idequipe")
     @JsonBackReference
     private Equipe equipe;
 }

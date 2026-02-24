@@ -6,6 +6,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class CargoDTO {
-    private String cargo;
+    private String Cargo;
     private Long idEquipe;
 }
