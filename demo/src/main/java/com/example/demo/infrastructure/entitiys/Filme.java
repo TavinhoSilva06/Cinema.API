@@ -18,11 +18,8 @@ public class Filme {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String NomeFilme;
-    private Integer AnoLancamento;
-    private String Categoria;
-    private String Critica;
-
-    @OneToMany(mappedBy = "filme")
-    private List<FilmesEquipe> equipes;
+    private String nomeFilme;
+    private Integer anoLancamento;
+    private String categoria;
+    private String critica;
 }
