@@ -1,5 +1,7 @@
 package com.example.demo.infrastructure.entitiys;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -22,4 +24,8 @@ public class Filme {
     private Integer anoLancamento;
     private String categoria;
     private String critica;
+
+    @JsonIgnore
+    @ManyToOne
+    private Equipe equipe;
 }

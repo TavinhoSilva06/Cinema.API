@@ -3,6 +3,7 @@ package com.example.demo.infrastructure.entitiys;
 import com.example.demo.infrastructure.entitiys.Equipe;
 import com.example.demo.infrastructure.entitiys.Filme;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -19,8 +20,11 @@ public class FilmesEquipe {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+
+
     @ManyToOne
     @JoinColumn(name = "IDEquipe")
+    @JsonIgnore
     private Equipe equipe;
 
     @ManyToOne

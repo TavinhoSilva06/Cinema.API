@@ -1,6 +1,7 @@
 package com.example.demo.infrastructure.entitiys;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
@@ -18,11 +19,11 @@ public class Cargo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String Cargo;
+    private String cargo;
 
     @ManyToOne
     @JoinColumn(name = "idequipe")
-    @JsonBackReference
+    @JsonIgnore
     private Equipe equipe;
 }
 
