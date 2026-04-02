@@ -33,8 +33,7 @@ public class EquipeController {
     }
 
     @PutMapping("/{id}")
-    public Equipe atualizar(@PathVariable Long id,
-                            @RequestBody Equipe equipe) {
+    public Equipe atualizar(@PathVariable Long id, @RequestBody Equipe equipe) {
         return service.atualizar(id, equipe);
     }
 
